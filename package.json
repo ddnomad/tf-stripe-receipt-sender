@@ -1,7 +1,7 @@
 {
   "name": "tf-stripe-receipt-sender",
   "version": "0.0.1",
-  "description": "A webhook handler to send a receipt after someone paid by credit card using Stripe on a Typeform.",
+  "description": "A webhook handler to send a receipt after someone paid by credit card using Stripe on a Typeform",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
