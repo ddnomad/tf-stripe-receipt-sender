@@ -28,10 +28,7 @@ async function updateStripeTransaction (request, response) {
     let haveSig = null
 
     try {
-      haveSig = 'sha256={}'.format(crypto.createHmac('sha256', request.app.locals.webhookSecret)
-        .update(request.body)
-        .digest('base64')
-      )
+      haveSig = 'sha256=' + crypto.createHmac('sha256', request.app.locals.webhookSecret).update(request.rawBody).digest('base64')
     } catch (e) {
       logger.error('Rejected incoming request: request body is missing')
       response.status(403).send()
@@ -81,7 +78,7 @@ async function updateStripeTransaction (request, response) {
     const charges = await stripe.charges.list({ limit: 5 })
     const targetCharge = charges.data.find(c => (
       c.metadata.typeform_form_id === formId &&
-      c.metadata.typerform_response_id === formToken
+      c.metadata.typeform_response_id === formToken
     ))
 
     await stripe.charges.update(targetCharge.id, { receipt_email: email })
@@ -125,7 +122,13 @@ function main () {
 
   // Initialize an application
   const app = express()
-  app.use(bodyParser.json())
+  app.use(bodyParser.json({
+    verify: (req, res, buf, encoding) => {
+      if (buf && buf.length) {
+        req.rawBody = buf.toString(encoding || 'utf8')
+      }
+    }
+  }))
 
   app.locals.logger = logger
   app.locals.verifySignature = verifySignature
