@@ -1,0 +1,22 @@
+{
+    "form_response": {
+        "form_id": 42,
+        "token": 69,
+        "answers": [
+            {
+                "type": "email",
+                "email": "laura@example.com",
+                "field": {
+                    "id": "SMEUb7VJz92Q",
+                    "type": "email"
+                }
+            },
+            {
+                "type": "payment",
+                "payment": {
+                    "success": true
+                }
+            }
+        ]
+    }
+}

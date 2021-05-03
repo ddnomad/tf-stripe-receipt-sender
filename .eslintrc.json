@@ -1,6 +1,6 @@
 {
     "env": {
-        "browser": true,
+        "node": true,
         "commonjs": true,
         "es2021": true
     },
@@ -9,5 +9,13 @@
         "ecmaVersion": 12
     },
     "rules": {
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "no-unused-vars": [
+            "error",
+            {"args": "none"}
+        ]
     }
 }
