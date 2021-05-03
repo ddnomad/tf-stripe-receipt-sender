@@ -17,6 +17,9 @@
   "repository": {
     "url": "https://github.com/ddnomad/tf-stripe-receipt-sender"
   },
+  "engines": {
+    "node": "14.x"
+  },
   "license": "MIT",
   "keywords": [
     "node",
