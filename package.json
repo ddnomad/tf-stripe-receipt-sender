@@ -11,9 +11,6 @@
     "express": "^4.16.4",
     "stripe": "^8.145.0"
   },
-  "engines": {
-    "node": "8.x"
-  },
   "repository": {
     "url": "https://github.com/ddnomad/tf-stripe-receipt-sender"
   },
@@ -24,5 +21,9 @@
     "express",
     "stripe",
     "typeform"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "standard": "^16.0.3"
+  }
 }
