@@ -1,0 +1,28 @@
+{
+  "name": "tf-stripe-receipt-sender",
+  "version": "0.0.1",
+  "description": "A webhook handler to send a receipt after someone paid by credit card using Stripe on a Typeform.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "stripe": "^8.145.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://github.com/ddnomad/tf-stripe-receipt-sender"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express",
+    "stripe",
+    "typeform"
+  ]
+}
